@@ -1,97 +1,11 @@
 "use client"
-
-import { useState } from "react"
-import { Home, User, Settings, Mail, Gamepad2, Code } from "lucide-react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { SettingsModal } from "@/components/settings-modal"
-import { ContactModal } from "@/components/contact-modal"
-import { motion } from "framer-motion"
+import { Home, User, FolderKanban, Mail } from "lucide-react"
+import { usePathname } from "next/navigation"
 
-const navItems = [
-  { icon: Home, label: "Home", id: "home" },
-  { icon: User, label: "About", id: "about" },
-  { icon: Gamepad2, label: "Games", id: "games" },
-  { icon: Code, label: "Mods", id: "mods" },
-  { icon: Mail, label: "Contact", id: "contact" },
-  { icon: Settings, label: "Settings", id: "settings" },
-]
+const items=[{href:"/",label:"Home",icon:Home},{href:"/about",label:"About",icon:User},{href:"/projects",label:"Projects",icon:FolderKanban},{href:"/contact",label:"Contact",icon:Mail}]
 
-export default function BottomHotbar() {
-  const [activeItem, setActiveItem] = useState("home")
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
-  const [isContactOpen, setIsContactOpen] = useState(false)
-
-  const handleItemClick = (id: string) => {
-    setActiveItem(id)
-
-    if (id === "settings") {
-      setIsSettingsOpen(true)
-    } else if (id === "contact") {
-      setIsContactOpen(true)
-    }
-  }
-
-  const hrefFor = (id: string) => {
-    if (id === "home") return "/"
-    if (id === "about") return "/about"
-    if (id === "games") return "/projects"
-    if (id === "mods") return "/mods"
-    return null
-  }
-
-  return (
-    <>
-      <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40"
-      >
-        <div className="bg-gray-800/90 backdrop-blur-md border border-gray-700/50 rounded-2xl p-2 shadow-2xl">
-          <div className="flex items-center gap-2">
-            {navItems.map((item) => {
-              const Icon = item.icon
-              const isActive = activeItem === item.id
-
-              const href = hrefFor(item.id)
-              const button = (
-                <Button
-                  onClick={() => handleItemClick(item.id)}
-                  variant="ghost"
-                  size="sm"
-                  className={`relative flex flex-col items-center gap-1 px-4 py-3 rounded-xl transition-all duration-300 ${
-                    isActive
-                      ? "bg-blue-600 text-white shadow-lg"
-                      : "text-gray-400 hover:text-white hover:bg-gray-700/50"
-                  }`}
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="text-xs font-medium">{item.label}</span>
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className="absolute inset-0 bg-blue-600 rounded-xl -z-10"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                </Button>
-              )
-
-              return href ? (
-                <Link key={item.id} href={href}>
-                  {button}
-                </Link>
-              ) : (
-                <div key={item.id}>{button}</div>
-              )
-            })}
-          </div>
-        </div>
-      </motion.div>
-
-      <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
-      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
-    </>
-  )
+export default function BottomHotbar(){
+ const pathname=usePathname()
+ return <nav className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 rounded-[1.35rem] border border-blue-200/15 bg-[#07111f]/85 p-1.5 shadow-2xl backdrop-blur-xl"><div className="flex gap-1">{items.map(item=>{const Icon=item.icon;const active=pathname===item.href;return <Link key={item.href} href={item.href} className={`flex min-w-16 flex-col items-center gap-1 rounded-xl px-3 py-2 text-xs transition ${active?"bg-blue-500 text-white":"text-slate-400 hover:bg-white/[.06] hover:text-white"}`}><Icon className="w-4 h-4"/><span>{item.label}</span></Link>})}</div></nav>
 }
