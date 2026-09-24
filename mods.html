@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropik Mod Editor - Xeno Interactions LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-gamepad"></i>
+                <span>Xeno Interactions</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="https://discord.gg/GBcuCSbktX" class="nav-link discord-btn" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    Discord
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-tree"></i> Tropik Mod Editor</h1>
+            <p>Create and share LUA mods for Tropik</p>
+        </div>
+    </section>
+
+    <!-- Mod Editor -->
+    <section class="mod-editor-section">
+        <div class="container">
+            <div class="editor-container">
+                <!-- Editor Controls -->
+                <div class="editor-controls">
+                    <div class="control-group">
+                        <label for="mod-name">Mod Name:</label>
+                        <input type="text" id="mod-name" placeholder="My Awesome Mod" value="Island Explorer">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="mod-description">Description:</label>
+                        <input type="text" id="mod-description" placeholder="Describe your mod..." value="Enhanced exploration mechanics for Tropik islands">
+                    </div>
+
+                    <div class="control-group">
+                        <button class="btn btn-primary" id="download-mod">
+                            <i class="fas fa-download"></i> Download .lua
+                        </button>
+                        <button class="btn btn-secondary" id="save-mod">
+                            <i class="fas fa-save"></i> Save to Library
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Code Editor -->
+                <div class="code-editor-container">
+                    <div class="editor-header">
+                        <h3>LUA Code Editor</h3>
+                        <div class="editor-info">
+                            <span>Tropik Mod API v1.0</span>
+                        </div>
+                    </div>
+                    <textarea id="code-editor">-- Tropik Island Explorer Mod
+-- Author: Player
+-- Description: Enhanced exploration mechanics for Tropik islands
+
+-- Tropik API Functions
+local TropikAPI = require("tropik_api")
+
+-- Mod Configuration
+local ModConfig = {
+    name = "Island Explorer",
+    version = "1.0.0",
+    author = "Player"
+}
+
+-- Enhanced Movement Speed
+function onPlayerSpawn(player)
+    TropikAPI.setPlayerSpeed(player, 1.5)
+    TropikAPI.showMessage(player, "Island Explorer mod loaded!")
+end
+
+-- Custom Island Events
+function onIslandEnter(player, island)
+    if island.name == "Main Island" then
+        TropikAPI.spawnParticles(player.position, "tropical_sparkles")
+        TropikAPI.playSound("island_welcome.wav")
+    elseif island.name == "Space Island" then
+        TropikAPI.setGravity(player, 0.3)
+        TropikAPI.showMessage(player, "Low gravity activated!")
+    end
+end
+
+-- Axolotl Interaction Enhancement
+function onAxolotlInteract(player, axolotl)
+    local friendship = TropikAPI.getFriendshipLevel(player, axolotl)
+    
+    if friendship > 50 then
+        TropikAPI.giveItem(player, "golden_fish")
+        TropikAPI.showMessage(player, axolotl.name .. " gave you a golden fish!")
+    end
+end
+
+-- NPC Dialogue Extension
+function onNPCTalk(player, npc)
+    if npc.type == "war_veteran" then
+        TropikAPI.addDialogue(npc, "I've seen many islands in my time...")
+        TropikAPI.addDialogue(npc, "But none as beautiful as these tropical paradises.")
+    elseif npc.type == "talking_tree" then
+        TropikAPI.addDialogue(npc, "The wind carries stories from distant islands...")
+    end
+end
+
+-- Register mod events
+TropikAPI.registerEvent("player_spawn", onPlayerSpawn)
+TropikAPI.registerEvent("island_enter", onIslandEnter)
+TropikAPI.registerEvent("axolotl_interact", onAxolotlInteract)
+TropikAPI.registerEvent("npc_talk", onNPCTalk)
+
+-- Initialize mod
+TropikAPI.initializeMod(ModConfig)</textarea>
+                </div>
+
+                <!-- Mod Library -->
+                <div class="mod-library">
+                    <h3>Your Mod Library</h3>
+                    <div class="mod-list">
+                        <div class="mod-item active">
+                            <div class="mod-info">
+                                <h4>Island Explorer</h4>
+                                <p>Enhanced exploration mechanics</p>
+                                <small>Last modified: Today</small>
+                            </div>
+                            <div class="mod-actions">
+                                <button class="btn btn-sm btn-secondary">Load</button>
+                                <button class="btn btn-sm btn-primary">Download</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mod-item">
+                            <div class="mod-info">
+                                <h4>Speed Boost</h4>
+                                <p>Increases player movement speed</p>
+                                <small>Last modified: Yesterday</small>
+                            </div>
+                            <div class="mod-actions">
+                                <button class="btn btn-sm btn-secondary">Load</button>
+                                <button class="btn btn-sm btn-primary">Download</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mod-item">
+                            <div class="mod-info">
+                                <h4>Custom NPCs</h4>
+                                <p>Adds new NPCs to islands</p>
+                                <small>Last modified: 2 days ago</small>
+                            </div>
+                            <div class="mod-actions">
+                                <button class="btn btn-sm btn-secondary">Load</button>
+                                <button class="btn btn-sm btn-primary">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tropik Modding Guide -->
+                <div class="modding-guide">
+                    <h3>Tropik Modding Guide</h3>
+                    <div class="guide-content">
+                        <div class="guide-section">
+                            <h4>Available APIs</h4>
+                            <ul>
+                                <li><code>TropikAPI.setPlayerSpeed(player, speed)</code> - Modify player movement</li>
+                                <li><code>TropikAPI.spawnParticles(position, type)</code> - Create visual effects</li>
+                                <li><code>TropikAPI.playSound(filename)</code> - Play audio files</li>
+                                <li><code>TropikAPI.setGravity(player, gravity)</code> - Adjust gravity</li>
+                                <li><code>TropikAPI.showMessage(player, text)</code> - Display messages</li>
+                                <li><code>TropikAPI.giveItem(player, item)</code> - Give items to players</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="guide-section">
+                            <h4>Events</h4>
+                            <ul>
+                                <li><code>player_spawn</code> - When a player joins the game</li>
+                                <li><code>island_enter</code> - When a player enters an island</li>
+                                <li><code>axolotl_interact</code> - When interacting with axolotls</li>
+                                <li><code>npc_talk</code> - When talking to NPCs</li>
+                                <li><code>zipline_use</code> - When using ziplines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Xeno Interactions LLC</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html#privacy">Privacy</a>
+                    <a href="about.html#terms">Terms</a>
+                    <a href="https://discord.gg/GBcuCSbktX" target="_blank">Discord</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Xeno Interactions LLC. All rights reserved. | Indiana, USA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="ai-assistant">
+        <div class="ai-toggle" id="ai-toggle">
+            <div class="ai-avatar">
+                <i class="fas fa-fish"></i>
+            </div>
+            <div class="ai-pulse"></div>
+        </div>
+        
+        <div class="ai-chat" id="ai-chat">
+            <div class="ai-header">
+                <div class="ai-info">
+                    <div class="ai-avatar-small">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div>
+                        <h4>Axol</h4>
+                        <span>AI Assistant</span>
+                    </div>
+                </div>
+                <button class="ai-close" id="ai-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="ai-messages" id="ai-messages">
+                <div class="ai-message ai-message-bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hi! I'm Axol, your modding assistant! 🐠</p>
+                        <p>I can help you with:</p>
+                        <ul>
+                            <li>Tropik API documentation</li>
+                            <li>LUA scripting tips</li>
+                            <li>Mod creation tutorials</li>
+                            <li>Community mod sharing</li>
+                        </ul>
+                        <p>What would you like to know about modding?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-quick-actions">
+                <button class="quick-action" data-action="api">API Guide</button>
+                <button class="quick-action" data-action="tutorial">Tutorial</button>
+                <button class="quick-action" data-action="examples">Examples</button>
+                <button class="quick-action" data-action="community">Community</button>
+            </div>
+            
+            <div class="ai-input">
+                <input type="text" id="ai-input-field" placeholder="Ask about modding...">
+                <button id="ai-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/lua/lua.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

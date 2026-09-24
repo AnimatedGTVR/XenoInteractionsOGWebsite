@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Xeno Interactions LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-gamepad"></i>
+                <span>Xeno Interactions</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="https://discord.gg/GBcuCSbktX" class="nav-link discord-btn" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    Discord
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Games/Mods Hub Bar -->
+    <div class="hub-bar">
+        <div class="hub-container">
+            <div class="hub-section">
+                <h3><i class="fas fa-gamepad"></i> Games</h3>
+                <div class="hub-items">
+                    <div class="hub-item active">
+                        <i class="fas fa-tree"></i>
+                        <span>Tropik</span>
+                        <div class="status-dot developing"></div>
+                    </div>
+                    <div class="hub-item coming-soon">
+                        <i class="fas fa-plus"></i>
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hub-section">
+                <h3><i class="fas fa-code"></i> Mods</h3>
+                <div class="hub-items">
+                    <div class="hub-item" onclick="window.open('mods.html', '_blank')">
+                        <i class="fas fa-wrench"></i>
+                        <span>Mod Editor</span>
+                        <div class="status-dot available"></div>
+                    </div>
+                    <div class="hub-item">
+                        <i class="fas fa-download"></i>
+                        <span>Community Mods</span>
+                        <div class="status-dot available"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hub-section">
+                <h3><i class="fas fa-users"></i> Community</h3>
+                <div class="hub-items">
+                    <div class="hub-item" onclick="window.open('https://discord.gg/GBcuCSbktX', '_blank')">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                        <div class="status-dot active"></div>
+                    </div>
+                    <div class="hub-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Forums</span>
+                        <div class="status-dot coming"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Projects</h1>
+            <p>Explore our games and collaborative projects</p>
+        </div>
+    </section>
+
+    <!-- Main Project - Tropik -->
+    <section class="main-project">
+        <div class="container">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="project-info">
+                        <div class="badge">Our Game</div>
+                        <h2>Tropik</h2>
+                        <p>VR Adventure • Multiplayer • Physics-Based</p>
+                    </div>
+                    <div class="project-status">
+                        <div class="status-indicator developing">
+                            <div class="status-dot"></div>
+                            <span>In Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-description">
+                        <p>A vibrant VR adventure where you and your friends become agile axolotl explorers across four dynamic tropical islands. Experience physics-driven locomotion, multiplayer adventures, and charming characters in this immersive world.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <div class="feature-grid">
+                            <div class="feature-box">
+                                <i class="fas fa-users"></i>
+                                <h4>Multiplayer Adventures</h4>
+                                <p>Explore with friends using our custom multiplayer system</p>
+                            </div>
+                            <div class="feature-box">
+                                <i class="fas fa-cogs"></i>
+                                <h4>Physics-Driven Gameplay</h4>
+                                <p>Gorilla Tag–style movement and Fish Game–inspired swimming</p>
+                            </div>
+                            <div class="feature-box">
+                                <i class="fas fa-map"></i>
+                                <h4>Four Unique Worlds</h4>
+                                <p>Main Island Hub, Exploration, City, and Space Islands</p>
+                            </div>
+                            <div class="feature-box">
+                                <i class="fas fa-heart"></i>
+                                <h4>Charming Characters</h4>
+                                <p>Hot-spring dwellers and cute animal companions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-progress">
+                        <div class="progress-header">
+                            <span>Development Progress</span>
+                            <span class="percentage">5%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 5%"></div>
+                        </div>
+                        <p>Core mechanics and multiplayer foundation in development</p>
+                    </div>
+                    
+                    <div class="islands-showcase">
+                        <h3>Island Worlds</h3>
+                        <div class="islands-grid">
+                            <div class="island-card">
+                                <i class="fas fa-tree"></i>
+                                <h4>Main Island</h4>
+                                <p>Central hub with hot springs</p>
+                                <span class="status concept">Concept</span>
+                            </div>
+                            <div class="island-card">
+                                <i class="fas fa-compass"></i>
+                                <h4>Exploration Island</h4>
+                                <p>Adventure zones with secrets</p>
+                                <span class="status planning">Planning</span>
+                            </div>
+                            <div class="island-card">
+                                <i class="fas fa-city"></i>
+                                <h4>City Island</h4>
+                                <p>Urban vertical exploration</p>
+                                <span class="status concept">Concept</span>
+                            </div>
+                            <div class="island-card">
+                                <i class="fas fa-rocket"></i>
+                                <h4>Space Island</h4>
+                                <p>Zero-gravity adventures</p>
+                                <span class="status concept">Concept</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-section">
+                        <h3>Development Team</h3>
+                        <div class="team-roles">
+                            <div class="role">
+                                <span class="role-title">CEO:</span>
+                                <span>Animated</span>
+                            </div>
+                            <div class="role">
+                                <span class="role-title">Lead Developer:</span>
+                                <span>Anémunt</span>
+                            </div>
+                            <div class="role">
+                                <span class="role-title">S.I.C.:</span>
+                                <span>Slugmaster447</span>
+                            </div>
+                            <div class="role">
+                                <span class="role-title">Project Manager:</span>
+                                <span>Dxsired</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-actions">
+                        <a href="https://discord.gg/GBcuCSbktX" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-discord"></i>
+                            Follow Development
+                        </a>
+                        <button class="btn btn-secondary" onclick="toggleTechnicalDetails()">
+                            <i class="fas fa-cog"></i>
+                            Technical Details
+                        </button>
+                    </div>
+                    
+                    <!-- Technical Details (Hidden by default) -->
+                    <div class="technical-details" id="technical-details">
+                        <h3>Technical Information</h3>
+                        <div class="tech-grid">
+                            <div class="tech-section">
+                                <h4>Technology Stack</h4>
+                                <ul>
+                                    <li><strong>Engine:</strong> Unity 3D with VR SDK</li>
+                                    <li><strong>Networking:</strong> LinkStream & Firebase</li>
+                                    <li><strong>Physics:</strong> Custom locomotion system</li>
+                                    <li><strong>Platform:</strong> VR Headsets (Quest, PCVR)</li>
+                                </ul>
+                            </div>
+                            <div class="tech-section">
+                                <h4>Development Roadmap</h4>
+                                <div class="roadmap">
+                                    <div class="milestone current">
+                                        <div class="milestone-dot"></div>
+                                        <div class="milestone-content">
+                                            <h5>Core Mechanics</h5>
+                                            <p>Physics-based movement system</p>
+                                            <span>In Progress</span>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="milestone-dot"></div>
+                                        <div class="milestone-content">
+                                            <h5>Main Island Hub</h5>
+                                            <p>Central social area</p>
+                                            <span>Q2 2024</span>
+                                        </div>
+                                    </div>
+                                    <div class="milestone">
+                                        <div class="milestone-dot"></div>
+                                        <div class="milestone-content">
+                                            <h5>Multiplayer Beta</h5>
+                                            <p>Closed testing</p>
+                                            <span>Q4 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Projects -->
+    <section class="collaborations">
+        <div class="container">
+            <h2>Collaboration Projects</h2>
+            <p>We're proud to contribute to these community-driven projects</p>
+            
+            <div class="collaboration-grid">
+                <div class="collaboration-card">
+                    <div class="collab-header">
+                        <div class="collab-icon mystery">
+                            <i class="fas fa-ghost"></i>
+                        </div>
+                        <div class="collab-info">
+                            <h3>Lurking within Shadows</h3>
+                            <p>Mystery • Collaboration</p>
+                        </div>
+                        <div class="collab-badge">Contributing</div>
+                    </div>
+                    
+                    <div class="collab-content">
+                        <p>A mysterious and atmospheric project that we're excited to be part of. More details will be revealed as development progresses.</p>
+                        
+                        <div class="collab-team">
+                            <h4>Team</h4>
+                            <div class="team-list">
+                                <span><strong>Owner:</strong> Dxsired</span>
+                                <span><strong>Head Developer:</strong> Anémunt</span>
+                                <span><strong>Developer:</strong> Animated</span>
+                            </div>
+                        </div>
+                        
+                        <div class="collab-progress">
+                            <div class="progress-header">
+                                <span>Progress</span>
+                                <span>2%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress purple" style="width: 2%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collaboration-card">
+                    <div class="collab-header">
+                        <div class="collab-icon adventure">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="collab-info">
+                            <h3>The Waking Souls</h3>
+                            <p>Adventure • Collaboration</p>
+                        </div>
+                        <div class="collab-badge">Contributing</div>
+                    </div>
+                    
+                    <div class="collab-content">
+                        <p>An ambitious adventure project with a talented team. We're contributing our expertise to help bring this vision to life.</p>
+                        
+                        <div class="collab-team">
+                            <h4>Team</h4>
+                            <div class="team-list">
+                                <span><strong>Owner:</strong> Anémunt - アネムント</span>
+                                <span><strong>Game Producer:</strong> Animated</span>
+                                <span><em>+ Artists, Developers, and Beta Testers</em></span>
+                            </div>
+                        </div>
+                        
+                        <div class="collab-progress">
+                            <div class="progress-header">
+                                <span>Progress</span>
+                                <span>8%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress amber" style="width: 8%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Xeno Interactions LLC</span>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html#privacy">Privacy</a>
+                    <a href="about.html#terms">Terms</a>
+                    <a href="https://discord.gg/GBcuCSbktX" target="_blank">Discord</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Xeno Interactions LLC. All rights reserved. | Indiana, USA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="ai-assistant">
+        <div class="ai-toggle" id="ai-toggle">
+            <div class="ai-avatar">
+                <i class="fas fa-fish"></i>
+            </div>
+            <div class="ai-pulse"></div>
+        </div>
+        
+        <div class="ai-chat" id="ai-chat">
+            <div class="ai-header">
+                <div class="ai-info">
+                    <div class="ai-avatar-small">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div>
+                        <h4>Axol</h4>
+                        <span>AI Assistant</span>
+                    </div>
+                </div>
+                <button class="ai-close" id="ai-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="ai-messages" id="ai-messages">
+                <div class="ai-message ai-message-bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hi! I'm Axol, your friendly AI assistant! 🐠</p>
+                        <p>I can help you with information about our projects, modding guides, and more!</p>
+                        <p>What would you like to know?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-quick-actions">
+                <button class="quick-action" data-action="tropik">About Tropik</button>
+                <button class="quick-action" data-action="modding">Modding Guide</button>
+                <button class="quick-action" data-action="discord">Join Discord</button>
+                <button class="quick-action" data-action="team">Meet the Team</button>
+            </div>
+            
+            <div class="ai-input">
+                <input type="text" id="ai-input-field" placeholder="Ask me anything...">
+                <button id="ai-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
