@@ -1,26 +1,3 @@
-"use client"
-
 import Link from "next/link"
-
-export default function PrivacyPage() {
-  return (
-    <main className="min-h-screen bg-black px-6 py-16 text-white">
-      <div className="mx-auto max-w-4xl">
-        <Link href="/" className="text-sm text-gray-500 transition-colors hover:text-white">← Back to Xeno Tech</Link>
-        <p className="mt-20 text-xs uppercase tracking-[0.3em] text-gray-500">Legal</p>
-        <h1 className="mt-4 text-5xl font-light md:text-7xl">Privacy &amp; Policies</h1>
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-gray-400">Xeno Tech keeps its projects focused, transparent, and respectful of the people who use them. This page will collect the policies for Xeno Tech and its individual projects in one place.</p>
-        <div className="mt-16 grid gap-4 md:grid-cols-2">
-          <section className="border border-white/15 p-6">
-            <h2 className="text-xl font-light">Privacy</h2>
-            <p className="mt-3 text-sm leading-relaxed text-gray-500">We aim to collect only what is needed to operate and improve our projects. Project-specific notices will be published here as services launch.</p>
-          </section>
-          <section className="border border-white/15 p-6">
-            <h2 className="text-xl font-light">Policies</h2>
-            <p className="mt-3 text-sm leading-relaxed text-gray-500">Terms, safety guidance, and project policies will be documented here for easy access.</p>
-          </section>
-        </div>
-      </div>
-    </main>
-  )
-}
+import BottomHotbar from "@/components/bottom-hotbar"
+export default function PrivacyPage(){return <main className="min-h-screen bg-[#030811] text-white px-6 py-24 pb-32"><div className="max-w-4xl mx-auto"><Link href="/" className="text-blue-300/70">← Home</Link><p className="mt-20 text-sm uppercase tracking-[.28em] text-blue-300/60">Legal</p><h1 className="mt-4 text-5xl md:text-7xl font-light">Privacy & policies</h1><p className="mt-7 text-lg text-slate-400 leading-relaxed">This website is primarily an informational home for Xeno Tech projects. Individual projects and services may publish their own policies when they collect data or provide accounts, hosted services, telemetry, or other online features.</p><div className="mt-14 space-y-4"><section className="rounded-[1.5rem] border border-blue-200/15 p-7"><h2 className="text-2xl">Website data</h2><p className="mt-3 text-slate-400 leading-relaxed">Xeno aims to keep collection limited to what is needed to operate, secure, and improve a service. Do not treat this page as a substitute for a project-specific notice where one exists.</p></section><section className="rounded-[1.5rem] border border-blue-200/15 p-7"><h2 className="text-2xl">Project policies</h2><p className="mt-3 text-slate-400 leading-relaxed">Policies for Abora and other Xeno projects should be published with those projects as their online services and distribution methods evolve.</p></section></div></div><BottomHotbar/></main>}
