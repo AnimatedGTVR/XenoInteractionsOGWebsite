@@ -232,18 +232,18 @@ export default function XenoInteractionsWebsite() {
   const HomePage = () => (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       {/* Hero Section - Modern, eye-catching design */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050b16]">
         <div className="absolute inset-0">
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-white/5 to-purple-500/5" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(37,99,235,0.28),transparent_36%),linear-gradient(145deg,#07111f_0%,#071a31_48%,#030811_100%)]" />
 
           {/* Animated grid */}
           <div
             className="absolute inset-0 opacity-20"
             style={{
               backgroundImage: `
-                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+                linear-gradient(rgba(96, 165, 250, 0.09) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(96, 165, 250, 0.09) 1px, transparent 1px)
               `,
               backgroundSize: "80px 80px",
               animation: "grid-move-slow 30s linear infinite",
@@ -251,9 +251,9 @@ export default function XenoInteractionsWebsite() {
           />
 
           {/* Floating orbs for depth */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl floating-orb" />
+          <div className="absolute top-[18%] left-[14%] w-[30rem] h-[30rem] bg-blue-500/10 rounded-full blur-3xl floating-orb" />
           <div
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl floating-orb"
+            className="absolute bottom-[14%] right-[12%] w-[28rem] h-[28rem] bg-cyan-400/10 rounded-full blur-3xl floating-orb"
             style={{ animationDelay: "5s" }}
           />
         </div>
@@ -265,7 +265,7 @@ export default function XenoInteractionsWebsite() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <h1 className="text-7xl md:text-8xl font-light mb-6 text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.18)]">
+            <h1 className="text-7xl md:text-8xl font-light tracking-[-0.045em] mb-6 text-white drop-shadow-[0_0_38px_rgba(59,130,246,0.28)]">
               Xeno Tech
             </h1>
             <p className="text-xl md:text-2xl text-white/90 font-light mb-8 drop-shadow-lg">
@@ -281,14 +281,14 @@ export default function XenoInteractionsWebsite() {
           >
             <button
               onClick={() => setCurrentPage("games")}
-              className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-full text-white font-light hover:bg-white/20 hover:border-white/50 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300"
+              className="group relative px-8 py-4 bg-blue-500/15 backdrop-blur-xl border border-blue-300/25 rounded-full text-white font-light hover:bg-blue-500/25 hover:border-blue-200/45 hover:-translate-y-0.5 hover:shadow-[0_14px_40px_rgba(37,99,235,0.25)] transition-all duration-300"
             >
               <span className="relative z-10">Explore Projects</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             <button
               onClick={() => setCurrentPage("axo-scripting")}
-              className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-sm border border-white/30 rounded-full text-white font-light hover:from-cyan-500/30 hover:to-blue-500/30 hover:border-white/50 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-300"
+              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600/30 to-cyan-500/20 backdrop-blur-xl border border-blue-300/30 rounded-full text-white font-light hover:from-blue-500/40 hover:to-cyan-400/30 hover:border-blue-200/50 hover:-translate-y-0.5 hover:shadow-[0_14px_40px_rgba(14,165,233,0.22)] transition-all duration-300"
             >
               <span className="relative z-10">Visit Abora OS</span>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -298,8 +298,8 @@ export default function XenoInteractionsWebsite() {
       </section>
 
       {/* Projects Section - Numbered layout inspired by Avencio */}
-      <section className="py-32 px-6 bg-white text-black">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-32 px-6 bg-gradient-to-b from-[#f7fbff] via-white to-[#eef7ff] text-slate-950 overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -321,9 +321,9 @@ export default function XenoInteractionsWebsite() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="space-y-6"
+                className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]"
               >
-                <div className="text-8xl font-light text-gray-300">1</div>
+                <div className="text-8xl font-light text-blue-100">1</div>
                 <h3 className="text-3xl font-light">{t("theWakingSoul")}</h3>
                 <p className="text-gray-600 leading-relaxed">{t("wakingSoulDesc")}</p>
                 <div className="space-y-2">
@@ -331,8 +331,8 @@ export default function XenoInteractionsWebsite() {
                     <span>Development Progress</span>
                     <span>11%</span>
                   </div>
-                  <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-black rounded-full" style={{ width: "11%" }} />
+                  <div className="h-1.5 bg-blue-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full" style={{ width: "11%" }} />
                   </div>
                 </div>
                 <button
@@ -350,9 +350,9 @@ export default function XenoInteractionsWebsite() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-6"
+                className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]"
               >
-                <div className="text-8xl font-light text-gray-300">2</div>
+                <div className="text-8xl font-light text-blue-100">2</div>
                 <h3 className="text-3xl font-light">{t("tropik")}</h3>
                 <p className="text-gray-600 leading-relaxed">{t("tropikDesc")}</p>
                 <div className="space-y-2">
@@ -360,8 +360,8 @@ export default function XenoInteractionsWebsite() {
                     <span>Development Progress</span>
                     <span>3%</span>
                   </div>
-                  <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-black rounded-full" style={{ width: "3%" }} />
+                  <div className="h-1.5 bg-blue-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full" style={{ width: "3%" }} />
                   </div>
                 </div>
                 <button
@@ -429,7 +429,7 @@ export default function XenoInteractionsWebsite() {
       </section>
 
       {/* Abora OS feature */}
-      <section className="py-32 px-6 bg-black text-white border-y border-white/10">
+      <section className="py-32 px-6 bg-gradient-to-br from-[#020712] via-[#07182d] to-[#062340] text-white border-y border-blue-300/10">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -455,7 +455,7 @@ export default function XenoInteractionsWebsite() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="border border-white/15 p-8 bg-white/[0.03]"
+            className="rounded-[2rem] border border-blue-200/15 p-8 bg-blue-950/25 backdrop-blur-xl shadow-[0_28px_90px_rgba(0,0,0,0.28)]"
           >
             <p className="text-xs uppercase tracking-widest text-gray-500 mb-6">The Abora ecosystem</p>
             <div className="mb-8 border-b border-white/10 pb-6">
@@ -570,7 +570,7 @@ export default function XenoInteractionsWebsite() {
           transition={{ duration: 0.6 }}
           className="space-y-12"
         >
-          <div className="space-y-6">
+          <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
             <div className="flex items-center gap-4">
               <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center">
                 <Zap className="w-10 h-10 text-white" />
@@ -664,7 +664,7 @@ export default function XenoInteractionsWebsite() {
           transition={{ duration: 0.6 }}
           className="space-y-12"
         >
-          <div className="space-y-6">
+          <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
             <div className="flex items-center gap-4">
               <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center">
                 <Trophy className="w-10 h-10 text-white" />
@@ -780,7 +780,7 @@ export default function XenoInteractionsWebsite() {
           transition={{ duration: 0.6 }}
           className="space-y-12"
         >
-          <div className="space-y-6">
+          <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
             <div className="flex items-center gap-4">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center">
                 <FileCode className="w-10 h-10 text-white" />
@@ -961,7 +961,7 @@ export default function XenoInteractionsWebsite() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]"
             >
               <p className="text-sm uppercase tracking-widest text-gray-500">Legal & Safety</p>
               <h1 className="text-6xl md:text-7xl font-light text-white leading-tight">Privacy &amp; Policies</h1>
@@ -982,8 +982,8 @@ export default function XenoInteractionsWebsite() {
               transition={{ duration: 0.6 }}
               className="space-y-12"
             >
-              <div className="space-y-6">
-                <div className="text-8xl font-light text-gray-300">1</div>
+              <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
+                <div className="text-8xl font-light text-blue-100">1</div>
                 <h2 className="text-4xl md:text-5xl font-light">Data Collection & Usage</h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   We believe in transparency about what data we collect and how we use it
@@ -1105,7 +1105,7 @@ export default function XenoInteractionsWebsite() {
               transition={{ duration: 0.6 }}
               className="space-y-12"
             >
-              <div className="space-y-6">
+              <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
                 <div className="text-8xl font-light text-gray-800">2</div>
                 <h2 className="text-4xl md:text-5xl font-light">Account Security</h2>
                 <p className="text-xl text-gray-400 leading-relaxed">
@@ -1212,8 +1212,8 @@ export default function XenoInteractionsWebsite() {
               transition={{ duration: 0.6 }}
               className="space-y-12"
             >
-              <div className="space-y-6">
-                <div className="text-8xl font-light text-gray-300">3</div>
+              <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
+                <div className="text-8xl font-light text-blue-100">3</div>
                 <h2 className="text-4xl md:text-5xl font-light">Content Moderation</h2>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Creating a safe and welcoming community for all players
@@ -1352,7 +1352,7 @@ export default function XenoInteractionsWebsite() {
               transition={{ duration: 0.6 }}
               className="space-y-12"
             >
-              <div className="space-y-6">
+              <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
                 <div className="text-8xl font-light text-gray-800">4</div>
                 <h2 className="text-4xl md:text-5xl font-light">Parental Controls</h2>
                 <p className="text-xl text-gray-400 leading-relaxed">
@@ -1458,8 +1458,8 @@ export default function XenoInteractionsWebsite() {
               transition={{ duration: 0.6 }}
               className="space-y-12"
             >
-              <div className="space-y-6">
-                <div className="text-8xl font-light text-gray-300">5</div>
+              <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
+                <div className="text-8xl font-light text-blue-100">5</div>
                 <h2 className="text-4xl md:text-5xl font-light">Your Data Rights</h2>
                 <p className="text-xl text-gray-600 leading-relaxed">You have full control over your personal data</p>
               </div>
@@ -2350,7 +2350,7 @@ export default function XenoInteractionsWebsite() {
           <div className="grid md:grid-cols-2 gap-10">
             <div>
               <h2 className="text-3xl font-light text-white mb-6">Send a Message</h2>
-              <form className="space-y-6">
+              <form className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                     Your Name
@@ -2402,7 +2402,7 @@ export default function XenoInteractionsWebsite() {
             </div>
             <div>
               <h2 className="text-3xl font-light text-white mb-6">Other Ways to Reach Us</h2>
-              <div className="space-y-6">
+              <div className="space-y-6 rounded-[2rem] border border-blue-100/80 bg-white/75 p-8 md:p-10 shadow-[0_24px_80px_rgba(30,64,175,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_28px_90px_rgba(37,99,235,0.13)]">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-gray-800 rounded-lg border border-gray-700">
                     <MessageSquare className="w-6 h-6 text-cyan-400" />
