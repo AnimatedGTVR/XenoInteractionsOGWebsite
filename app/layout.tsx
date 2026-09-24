@@ -10,17 +10,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  console.log("[v0] RootLayout rendering")
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <title>Xeno Tech — Projects and software</title>
         <meta
           name="description"
-          content="Xeno Tech owns and supports independent projects including Abora OS, with support from Tareno Labs and Anemunt's Modularity engine."
+          content="Xeno Tech builds independent systems software, developer tools, programming languages, Linux projects, and interactive experiences."
         />
-        <meta name="keywords" content="Xeno Tech, Abora OS, NixOS, Tareno Labs, Modularity, open source" />
+        <meta name="keywords" content="Xeno Tech, Abora OS, Pippin, Vanta, LuminaIDE, TinyPM, Linux, open source, software development" />
       </head>
       <body className={inter.className}>
         <ClientLayout>{children}</ClientLayout>
@@ -29,6 +27,3 @@ export default function RootLayout({
   )
 }
 
-export const metadata = {
-      generator: 'v0.app'
-    };
