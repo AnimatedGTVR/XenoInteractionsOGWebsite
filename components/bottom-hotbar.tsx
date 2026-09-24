@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Home, User, Settings, Mail, Gamepad2, Code } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { SettingsModal } from "@/components/settings-modal"
 import { ContactModal } from "@/components/contact-modal"
@@ -31,6 +32,14 @@ export default function BottomHotbar() {
     }
   }
 
+  const hrefFor = (id: string) => {
+    if (id === "home") return "/"
+    if (id === "about") return "/about"
+    if (id === "games") return "/projects"
+    if (id === "mods") return "/mods"
+    return null
+  }
+
   return (
     <>
       <motion.div
@@ -45,9 +54,9 @@ export default function BottomHotbar() {
               const Icon = item.icon
               const isActive = activeItem === item.id
 
-              return (
+              const href = hrefFor(item.id)
+              const button = (
                 <Button
-                  key={item.id}
                   onClick={() => handleItemClick(item.id)}
                   variant="ghost"
                   size="sm"
@@ -67,6 +76,14 @@ export default function BottomHotbar() {
                     />
                   )}
                 </Button>
+              )
+
+              return href ? (
+                <Link key={item.id} href={href}>
+                  {button}
+                </Link>
+              ) : (
+                <div key={item.id}>{button}</div>
               )
             })}
           </div>
